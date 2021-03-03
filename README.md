@@ -86,6 +86,14 @@ dependencies:
     flavour: gitlab
     url: honk/honk
     constraints: <3.0.0
+- name: honk_container
+  version: 4.12.9
+  upstream:
+    flavour: container
+    url: gcr.io/k8s-staging-kubernetes/conformance
+  refPaths:
+  - path: clusters.yaml
+    match: container_name
 ```
 
 Use `zeitgeist local` to verify that the dependency version is correct in all files referenced in _`refPaths`_:
@@ -122,6 +130,14 @@ export GITLAB_PRIVATE_TOKEN=<YOUR_GITLAB_PRIVATE_TOKEN>
 You can use in the `dependencies.yaml` both public and private GitLab instances. The only limitation today is that
 you can only use one private GitLab at the moment.
 
+
+For `Container`:
+
+```console
+export REGISTRY_USERNAME=<YOUR_REGISTRY_USERNAME>
+export REGISTRY_USER_PASSWORD=<YOUR_REGISTRY_TOKEN_PASSWORD>
+```
+
 See the [full documentation](https://godoc.org/sigs.k8s.io/zeitgeist/dependencies#Dependency) to see configuration options.
 
 ## When is Zeitgeist _not_ suggested
@@ -155,7 +171,7 @@ Zeitgeist is inspired by [Kubernetes' script to manage external dependencies](ht
 - [x] Support `helm` upstream
 - [ ] Support `eks` upstream
 - [x] Support `ami` upstream
-- [ ] support `docker` upstream
+- [x] support `docker` upstream
 - [x] Cleanly separate various upstreams to make it easy to add new upstreams
 - [x] Implement non-semver support (e.g. for AMI, but also for classic releases)
 - [x] Write good docs :)

@@ -281,6 +281,16 @@ func (c *Client) RemoteCheck(dependencyFilePath string) ([]string, error) {
 			}
 
 			latestVersion.Version, err = helm.LatestVersion()
+		case upstreams.ContainerFlavour:
+			var ct upstreams.Container
+
+			decodeErr := mapstructure.Decode(upstream, &ct)
+			if decodeErr != nil {
+				log.Debug("errr decoding")
+				return nil, decodeErr
+			}
+
+			latestVersion.Version, err = ct.LatestVersion()
 		default:
 			return nil, errors.Errorf("unknown upstream flavour '%v' for dependency %v", flavour, dep.Name)
 		}

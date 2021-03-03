@@ -28,6 +28,10 @@ import (
 	"github.com/pkg/errors"
 )
 
+const (
+	DefaultSemVerConstraints = ">= 0.0.0"
+)
+
 // UpstreamBase only contains a flavour. "Concrete" upstreams each implement their own fields.
 type UpstreamBase struct {
 	Flavour UpstreamFlavour `yaml:"flavour"`
@@ -51,6 +55,8 @@ const (
 	AMIFlavour UpstreamFlavour = "ami"
 	// HelmFlavour is for Helm charts
 	HelmFlavour UpstreamFlavour = "helm"
+	// ContainerFlavour is for Helm charts
+	ContainerFlavour UpstreamFlavour = "container"
 	// DummyFlavour is for testing
 	DummyFlavour UpstreamFlavour = "dummy"
 )
