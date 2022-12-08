@@ -3,7 +3,7 @@ module sigs.k8s.io/zeitgeist
 go 1.19
 
 require (
-	github.com/aws/aws-sdk-go v1.44.135
+	github.com/aws/aws-sdk-go v1.44.155
 	github.com/blang/semver/v4 v4.0.0
 	github.com/google/go-containerregistry v0.12.1
 	github.com/maxbrunsfeld/counterfeiter/v6 v6.5.0
@@ -14,7 +14,7 @@ require (
 	github.com/xanzy/go-gitlab v0.74.0
 	gopkg.in/yaml.v3 v3.0.1
 	helm.sh/helm/v3 v3.10.2
-	sigs.k8s.io/release-sdk v0.9.3
+	sigs.k8s.io/release-sdk v0.6.0
 	sigs.k8s.io/release-utils v0.7.3
 )
 
@@ -25,6 +25,7 @@ require (
 	github.com/ProtonMail/go-crypto v0.0.0-20210428141323-04723f9f07d7 // indirect
 	github.com/acomagu/bufpipe v1.0.3 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be // indirect
 	github.com/containerd/containerd v1.6.6 // indirect
@@ -52,7 +53,7 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/btree v1.0.1 // indirect
 	github.com/google/gnostic v0.5.7-v3refs // indirect
-	github.com/google/go-github/v45 v45.2.0 // indirect
+	github.com/google/go-github/v39 v39.1.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
