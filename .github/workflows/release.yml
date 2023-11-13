@@ -77,7 +77,7 @@ jobs:
         uses: puerco/release-actions/setup-tejolote@beca347e5c7f22d345c758aaf318ab46e0329cc0 # v0.1.0
 
       - run: |
-          tejolote attest --artifacts github://kubernetes-sigs/zeitgeist/${{ steps.tag.outputs.tag_name }} github://kubernetes-sigs/zeitgeist/"${GITHUB_RUN_ID}" --output zeitgeist.intoto.json --sign
+          tejolote attest --artifacts github://cpanato/zeitgeist/${{ steps.tag.outputs.tag_name }} github://cpanato/zeitgeist/"${GITHUB_RUN_ID}" --output zeitgeist.intoto.json --sign
 
       - name: Release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
