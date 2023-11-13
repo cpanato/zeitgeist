@@ -86,4 +86,4 @@ jobs:
           tag_name: "${{ steps.tag.outputs.tag_name }}"
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
-          GITHUB_REPOSITORY: kubernetes-sigs/zeitgeist
+          GITHUB_REPOSITORY: cpanato/zeitgeist
