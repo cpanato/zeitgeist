@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Check out code onto GOPATH
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
@@ -25,7 +25,7 @@ jobs:
           install-only: true
 
       - name: Install bom
-        uses: kubernetes-sigs/release-actions/setup-bom@a30d93cf2aa029e1e4c8a6c79f766aebf429fddb # v0.3.1
+        uses: kubernetes-sigs/release-actions/setup-bom@8af7b2a5596dff526de9db59b2c4b8457e9f52a1 # v0.4.0
 
       - name: Run Snapshot
         run: make snapshot
@@ -47,12 +47,12 @@ jobs:
 
     steps:
       - name: Check out code onto GOPATH
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           fetch-depth: 1
 
       - name: Install tejolote
-        uses: kubernetes-sigs/release-actions/setup-tejolote@a30d93cf2aa029e1e4c8a6c79f766aebf429fddb # v0.3.1
+        uses: kubernetes-sigs/release-actions/setup-tejolote@8af7b2a5596dff526de9db59b2c4b8457e9f52a1 # v0.4.0
 
       - run: |
           tejolote attest github://kubernetes-sigs/zeitgeist/"${GITHUB_RUN_ID}" --output zeitgeist.intoto.json
